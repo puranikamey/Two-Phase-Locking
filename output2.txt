@@ -1,0 +1,63 @@
+The program is running  successfully. Now, please enter the input file name in (filename.txt, example : inputread.txt) format. 
+input2.txt
+Process begin for Transaction: T1
+
+Perform Read. 
+Transaction:1 issued read lock on item Y
+Read_item (Y)
+
+Perform write. 
+Transaction:1 is Upgrading readlock to writelock on item Y
+Write_item (Y)
+
+Perform Read. 
+Transaction:1 issued read lock on item Z
+Read_item (Z)
+
+Process begin for Transaction: T2
+
+Perform Read. 
+Transaction:2 issued read lock on item X
+Read_item (X)
+
+Perform write. 
+Transaction:2 is Upgrading readlock to writelock on item X
+Write_item (X)
+
+Perform write. 
+Transaction:1 is Upgrading readlock to writelock on item Z
+Write_item (Z)
+
+Item requested Y has a  Write lock  and may not  be available to read
+
+Transaction : 1 is Committed
+
+All items that were held, released by the transaction T1
+
+Process begin for Transaction: T3
+
+Perform Read. 
+Transaction:3 issued read lock on item Z
+Read_item (Z)
+
+Perform write. 
+Transaction:3 is Upgrading readlock to writelock on item Z
+Write_item (Z)
+
+Perform write. 
+Transaction:2 has issued  a write lock on item Y
+Write_item (Y)
+
+Transaction :2 is  already Aborted !
+Perform Read. 
+Transaction:3 issued read lock on item X
+Read_item (X)
+
+Perform write. 
+Transaction:3 is Upgrading readlock to writelock on item X
+Write_item (X)
+
+Transaction : 3 is Committed
+
+All items that were held, released by the transaction T3
+
